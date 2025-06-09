@@ -6,7 +6,12 @@ export default function FlashCard() {
   function getRandomInt(min: number, max: number): number {
     return Math.floor(Math.random() * (max - min + 1)) + min
   }
-  
+
+  function getRandomHexColor(): string {
+    const hex = Math.floor(Math.random() * 0xffffff).toString(16)
+    return `#${hex.padStart(6, '0')}`
+  }
+
   const countdown = getRandomInt(2, 10)
 
   useEffect(() => {
@@ -16,7 +21,12 @@ export default function FlashCard() {
 
   return isVisible ? (
     <>
-      <div className="size-40 border">countdown: {countdown}</div>
+      <div
+        className="size-40 border"
+        style={{ backgroundColor: getRandomHexColor() }}
+      >
+        countdown: { countdown }
+      </div>
     </>
   ) : null
 }
