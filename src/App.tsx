@@ -12,7 +12,7 @@ export default function App() {
 
       <div className="mt-2">
         <div className="inline-flex flex-col items-start">
-          <label htmlFor="">count:</label>
+          <label htmlFor="count">count:</label>
           <input
             type="number"
             id="count"
@@ -23,9 +23,10 @@ export default function App() {
           />
         </div>
         <div className="inline-flex flex-col items-start">
-          <label htmlFor="">interval:</label>
+          <label htmlFor="interval">interval:</label>
           <input
             type="number"
+            id="interval"
             min={0}
             value={interval}
             className="border"

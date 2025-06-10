@@ -1,12 +1,12 @@
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
-import './index.css'
 import App from './App.tsx'
+import './index.css'
 
 const rootElement = document.getElementById('root')
 
 if (!rootElement) {
-  throw new Error("Не найден элемент с id 'root'")
+  throw new Error('Не найден элемент с id \'root\'')
 }
 
 createRoot(rootElement).render(
