@@ -11,6 +11,10 @@ export default function App() {
 
   const intervalId = useRef<ReturnType<typeof setInterval> | null>(null)
 
+  const handleExpire = (id: string) => {
+    setCards(prev => prev.filter(card => card.id !== id))
+  }
+
   // Очистка при размонтировании
   useEffect(() => {
     return () => {
@@ -69,7 +73,7 @@ export default function App() {
 
       <div className="flex flex-wrap justify-center gap-1 p-1">
         {cards.map(card => (
-          <FlashCard key={card.id} />
+          <FlashCard key={card.id} id={card.id} onExpire={handleExpire} />
         ))}
       </div>
     </>

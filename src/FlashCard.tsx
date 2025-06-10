@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 
-export default function FlashCard() {
+type FlashCardProps = {
+  id: string
+  onExpire: (id: string) => void
+}
+
+export default function FlashCard({ id, onExpire }: FlashCardProps) {
   const [isVisible, setIsVisible] = useState(true)
   const [resetTimestamp, setResetTimestamp] = useState(Date.now())
   const [restartKey, setRestartKey] = useState(0)
@@ -17,7 +22,10 @@ export default function FlashCard() {
 
   const handleFadeOut = () => {
     setFadingOut(true)
-    setTimeout(() => setIsVisible(false), 300)
+    setTimeout(() => {
+      setIsVisible(false)
+      onExpire(id)
+    }, 300)
   }
 
   useEffect(() => {
