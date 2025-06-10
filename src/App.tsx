@@ -65,7 +65,7 @@ export default function App() {
         />
       </div>
 
-      <div className="flex flex-wrap justify-center gap-1 p-1">
+      <div className="flex flex-wrap justify-center gap-2 p-2">
         {cards.map(card => (
           <FlashCard key={card.id} id={card.id} onExpire={handleExpire} />
         ))}
