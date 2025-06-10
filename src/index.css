@@ -40,3 +40,19 @@ h1 {
     background-color: #f9f9f9;
   }
 }
+
+@keyframes countdown {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-countdown {
+  animation-name: countdown;
+  animation-timing-function: linear;
+  animation-fill-mode: forwards;
+  animation-duration: var(--countdown-duration, 5s); /* fallback: 5s */
+}
