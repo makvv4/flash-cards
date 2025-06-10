@@ -48,7 +48,7 @@ export default function FlashCard({ id, onExpire }: FlashCardProps) {
       <div
         key={restartKey}
         className="animate-countdown h-2 w-full bg-green-500"
-        style={{ '--countdown-duration': `${countdown}s` } as React.CSSProperties}
+        style={{ '--countdown-duration': `${countdown}s`, 'backgroundColor': textColor } as React.CSSProperties}
       />
     </div>
   )
