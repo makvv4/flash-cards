@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import FlashCard from './FlashCard.tsx'
+import NumericInput from './NumericInput.tsx'
 import './App.css'
 
 interface CardData { id: string }
@@ -50,38 +51,18 @@ export default function App() {
       <h1>Flash Cards App</h1>
 
       <div className="mt-2 flex flex-wrap justify-center gap-2">
-        <div className="inline-flex flex-col items-start">
-          <label htmlFor="count">count:</label>
-          <input
-            type="text"
-            id="count"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            value={countInput}
-            className="rounded-sm border px-1"
-            onChange={(e) => {
-              const val = e.target.value
-              if (/^\d*$/.test(val))
-                setCountInput(val)
-            }}
-          />
-        </div>
-        <div className="inline-flex flex-col items-start">
-          <label htmlFor="interval">interval:</label>
-          <input
-            type="text"
-            id="interval"
-            inputMode="numeric"
-            pattern="[0-9]*"
-            value={intervalInput}
-            className="rounded-sm border px-1"
-            onChange={(e) => {
-              const val = e.target.value
-              if (/^\d*$/.test(val))
-                setIntervalInput(val)
-            }}
-          />
-        </div>
+        <NumericInput
+          id="count"
+          label="count"
+          value={countInput}
+          onChange={setCountInput}
+        />
+        <NumericInput
+          id="interval"
+          label="interval"
+          value={intervalInput}
+          onChange={setIntervalInput}
+        />
       </div>
 
       <div className="flex flex-wrap justify-center gap-1 p-1">
