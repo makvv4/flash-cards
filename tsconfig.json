@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "jsx": "react-jsx",
+    "lib": ["DOM", "DOM.Iterable", "ES2020"],
+    "baseUrl": "src",
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "paths": {
+      "@app/*": ["1.app/*"],
+      "@processes/*": ["2.app/*"],
+      "@pages/*": ["3.pages/*"],
+      "@widgets/*": ["4.widgets/*"],
+      "@features/*": ["5.features/*"],
+      "@entities/*": ["6.entities/*"],
+      "@shared/*": ["7.shared/*"]
+    },
+    "strict": true,
+    "esModuleInterop": true
+  }
+}
