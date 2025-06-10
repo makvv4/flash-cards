@@ -39,7 +39,7 @@ export default function FlashCard({ id, onExpire }: FlashCardProps) {
   return (
     <div
       onClick={handleClick}
-      className={`flex size-40 cursor-pointer flex-col items-center justify-around border border-black p-1 transition-all duration-300
+      className={`flex h-40 w-30 cursor-pointer flex-col items-center justify-around border border-black p-1 transition-all duration-300
             ${fadingOut ? 'scale-90 opacity-0' : 'scale-100 opacity-100'}
           `}
       style={{ backgroundColor: bgColor, color: textColor }}

@@ -5,9 +5,12 @@ import './App.css'
 interface CardData { id: string }
 
 export default function App() {
-  const [count, setCount] = useState(0)
-  const [intervalSec, setIntervalSec] = useState(0)
+  const [countInput, setCountInput] = useState('')
+  const [intervalInput, setIntervalInput] = useState('')
   const [cards, setCards] = useState<CardData[]>([])
+
+  const count = Number(countInput) || 0
+  const intervalSec = Number(intervalInput) || 0
 
   const intervalId = useRef<ReturnType<typeof setInterval> | null>(null)
 
@@ -50,23 +53,33 @@ export default function App() {
         <div className="inline-flex flex-col items-start">
           <label htmlFor="count">count:</label>
           <input
-            type="number"
+            type="text"
             id="count"
-            min={0}
-            value={count}
-            className="rounded-sm border"
-            onChange={e => setCount(+e.target.value)}
+            inputMode="numeric"
+            pattern="[0-9]*"
+            value={countInput}
+            className="rounded-sm border px-1"
+            onChange={(e) => {
+              const val = e.target.value
+              if (/^\d*$/.test(val))
+                setCountInput(val)
+            }}
           />
         </div>
         <div className="inline-flex flex-col items-start">
           <label htmlFor="interval">interval:</label>
           <input
-            type="number"
+            type="text"
             id="interval"
-            min={0}
-            value={intervalSec}
-            className="rounded-sm border"
-            onChange={e => setIntervalSec(+e.target.value)}
+            inputMode="numeric"
+            pattern="[0-9]*"
+            value={intervalInput}
+            className="rounded-sm border px-1"
+            onChange={(e) => {
+              const val = e.target.value
+              if (/^\d*$/.test(val))
+                setIntervalInput(val)
+            }}
           />
         </div>
       </div>
