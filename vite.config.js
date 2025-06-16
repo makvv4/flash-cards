@@ -19,5 +19,5 @@ export default defineConfig({
       '@shared': path.resolve(__dirname, 'src/7.shared'),
     },
   },
-  base: '/flash-cards',
+  base: '/flash-cards/',
 })
